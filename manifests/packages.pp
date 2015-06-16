@@ -21,8 +21,8 @@ class activemq::packages (
   $package_real = $package
 
   package { $package_real:
-    ensure  => $version_real,
-    notify  => Service['activemq'],
+    ensure => $version_real,
+    notify => Service['activemq'],
   }
 
   package { 'tanukiwrapper' :

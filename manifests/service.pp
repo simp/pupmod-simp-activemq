@@ -21,8 +21,8 @@ class activemq::service(
   $ensure_real = $ensure
 
   service { 'activemq':
-    ensure     => $ensure_real,
-    require    => Class['activemq::packages'],
+    ensure  => $ensure_real,
+    require => Class['activemq::packages'],
   }
 
 }
