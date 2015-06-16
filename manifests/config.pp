@@ -47,9 +47,9 @@ class activemq::config (
   }
 
   file {'/usr/share/activemq/conf/activemq-wrapper.conf' :
-    ensure => file,
-    content => template("activemq/default/activemq-wrapper.conf"),
-    mode => '0755'
+    ensure  => file,
+    content => template('activemq/default/activemq-wrapper.conf'),
+    mode    => '0755'
   }
 
 
