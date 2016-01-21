@@ -10,6 +10,5 @@ describe 'activemq::packages' do
 
   it { should create_class('activemq::packages') }
   it { should contain_package('activemq') }
-  it { should contain_package('tanukiwrapper') }
   it { should contain_file('/etc/init.d/activemq') }
 end

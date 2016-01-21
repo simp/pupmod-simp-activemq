@@ -3,7 +3,7 @@
 Summary:  SIMP ActiveMQ Puppet Module
 Name: pupmod-simp-activemq
 Version: 2.0.0
-Release: 1
+Release: 2
 License: Apache License, Version 2.0
 Group: Applications/System
 Source: %{name}-%{version}-%{release}.tar.gz
@@ -49,6 +49,10 @@ done
 # Post uninstall stuff
 
 %changelog
+* Thu Jan 21 2016 Nick Markowski <nmarkowski@keywcorp.com> - 2.0.0-2
+- Updated module to the latest for enhanced features and deprecation
+  of the tanukiwrapper dependency.
+
 * Mon Nov 09 2015 Chris Tessmer <chris.tessmer@onypoint.com> - 2.0.0-1
 - migration to simplib and simpcat (lib/ only)
 

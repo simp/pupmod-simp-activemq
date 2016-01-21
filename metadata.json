@@ -1,0 +1,31 @@
+{
+  "name": "simp-activemq",
+  "version": "2.0.0",
+  "author": "SIMP Team",
+  "summary": "Installs, configures, and manages ActiveMQ middleware",
+  "license": "Apache-2.0",
+  "source": "https://github.com/simp/pupmod-simp-activemq",
+  "project_page": "https://github.com/simp/pupmod-simp-activemq",
+  "issues_url": "https://github.com/simp/pupmod-simp-activemq/issues",
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 3.4.0"
+    }
+  ],
+  "description": "ActiveMQ Puppet Module",
+  "dependencies": [
+    {
+      "name": "puppetlabs/java",
+      "version_requirement": ">= 1.2.0"
+    },
+    {
+      "name": "puppetlabs/java_ks",
+      "version_requirement": "1.2.0"
+    },
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">=4.2.0 < 5.0.0"
+    }
+  ]
+}
