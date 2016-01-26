@@ -8,8 +8,8 @@ describe 'activemq::packages' do
 
   let(:params){{ :version => 'present', :package => 'activemq'}}
 
-  it { should create_class('activemq::packages') }
-  it { should contain_package('activemq') }
-  it { should contain_package('tanukiwrapper') }
-  it { should contain_file('/etc/init.d/activemq') }
+  it { is_expected.to create_class('activemq::packages') }
+  it { is_expected.to contain_package('activemq') }
+  it { is_expected.to contain_package('tanukiwrapper') }
+  it { is_expected.to contain_file('/etc/init.d/activemq') }
 end
