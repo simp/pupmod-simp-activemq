@@ -14,9 +14,9 @@ describe 'activemq::config' do
                  'path'          => '/etc/activemq/activemq.xml' }}
 
 
-  it { should create_class('activemq::config') }
-  it { should create_file('/usr/share/activemq/conf/activemq-wrapper.conf') }
-  it { should contain_file('activemq.xml').with({
+  it { is_expected.to create_class('activemq::config') }
+  it { is_expected.to create_file('/usr/share/activemq/conf/activemq-wrapper.conf') }
+  it { is_expected.to contain_file('activemq.xml').with({
          'path'    => '/etc/activemq/activemq.xml',
          'content' => 'template("simp/activemq.xml.erb")'}) }
 
