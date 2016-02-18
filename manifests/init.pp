@@ -25,20 +25,21 @@
 # }
 #
 class activemq(
-  $version                 = 'present',
-  $package                 = 'activemq',
-  $ensure                  = 'running',
-  $instance                = 'activemq',
-  $webconsole              = true,
-  $manage_config           = true,
-  $server_config           = 'UNSET',
-  $mq_broker_name          = $::fqdn,
-  $mq_admin_username       = 'admin',
-  $mq_admin_password,
-  $mq_cluster_username     = 'amq',
-  $mq_cluster_password,
-  $mq_cluster_brokers      = [],
-) {
+  $version                 = $activemq::params::version,
+  $package                 = $activemq::params::package,
+  $ensure                  = $activemq::params::ensure,
+  $service_enable          = $activemq::params::service_enable,
+  $instance                = $activemq::params::instance,
+  $webconsole              = $activemq::params::webconsole,
+  $server_config           = $activemq::params::server_config,
+  $server_config_show_diff = $activemq::params::server_config,
+  $mq_broker_name          = $activemq::params::mq_broker_name,
+  $mq_admin_username       = $activemq::params::mq_admin_username,
+  $mq_admin_password       = $activemq::params::mq_admin_password,
+  $mq_cluster_username     = $activemq::params::mq_cluster_username,
+  $mq_cluster_password     = $activemq::params::mq_cluster_password,
+  $mq_cluster_brokers      = $activemq::params::mq_cluster_brokers,
+) inherits activemq::params {
 
   validate_re($ensure, '^running$|^stopped$')
   validate_re($version, '^present$|^latest$|^[~+._0-9a-zA-Z:-]+$')
@@ -58,17 +59,23 @@ class activemq(
     warning '$mq_admin_username is set to the default value.  This should be changed.'
   }
 
+  if $mq_admin_password_real == 'admin' {
+    warning '$mq_admin_password is set to the default value.  This should be changed.'
+  }
+
   if size($mq_cluster_brokers_real) > 0 and $mq_cluster_username_real == 'amq' {
     warning '$mq_cluster_username is set to the default value.  This should be changed.'
   }
 
+  if size($mq_cluster_brokers_real) > 0 and $mq_cluster_password_real == 'secret' {
+    warning '$mq_cluster_password is set to the default value.  This should be changed.'
+  }
+
   # Since this is a template, it should come _after_ all variables are set for
   # this class.
-  if $manage_config {
-    $server_config_real = $server_config ? {
-      'UNSET' => template("${module_name}/activemq.xml.erb"),
-      default => $server_config,
-    }
+  $server_config_real = $server_config ? {
+    'UNSET' => template("${module_name}/activemq.xml.erb"),
+    default => $server_config,
   }
 
   # Anchors for containing the implementation class
@@ -84,16 +91,17 @@ class activemq(
   }
 
   class { 'activemq::config':
-    instance      => $instance,
-    package       => $package_real,
-    server_config => $server_config_real,
-    manage_config => $manage_config,
-    require       => Class['activemq::packages'],
-    notify        => Class['activemq::service'],
+    instance                => $instance,
+    package                 => $package_real,
+    server_config           => $server_config_real,
+    server_config_show_diff => $server_config_show_diff,
+    require                 => Class['activemq::packages'],
+    notify                  => Class['activemq::service'],
   }
 
   class { 'activemq::service':
-    ensure => $ensure_real,
+    ensure         => $ensure_real,
+    service_enable => $service_enable
   }
 
   anchor { 'activemq::end':
@@ -101,3 +109,4 @@ class activemq(
   }
 
 }
+

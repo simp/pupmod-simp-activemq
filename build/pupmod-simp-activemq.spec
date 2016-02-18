@@ -2,8 +2,8 @@
 
 Summary:  SIMP ActiveMQ Puppet Module
 Name: pupmod-simp-activemq
-Version: 2.0.0
-Release: 1
+Version: 3.0.0
+Release: 0
 License: Apache License, Version 2.0
 Group: Applications/System
 Source: %{name}-%{version}-%{release}.tar.gz
@@ -11,7 +11,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Buildarch: noarch
 Requires: pupmod-iptables => 4.1.0-3
 Requires: pupmod-puppetlabs-java => 1.2.0-0
-Requires: pupmod-puppetlabs-java_ks >= 1.2.0-1
+Requires: puppetlabs-java_ks >= 1.4.0
 Requires: puppet >= 3.4
 
 Prefix:"/etc/puppet/environments/simp/modules/%{short_name}"
@@ -49,6 +49,10 @@ done
 # Post uninstall stuff
 
 %changelog
+* Thu Jan 21 2016 Nick Markowski <nmarkowski@keywcorp.com> - 3.0.0-0
+- Updated module to the latest for enhanced features and deprecation
+  of the tanukiwrapper dependency.
+
 * Mon Nov 09 2015 Chris Tessmer <chris.tessmer@onypoint.com> - 2.0.0-1
 - migration to simplib and simpcat (lib/ only)
 
