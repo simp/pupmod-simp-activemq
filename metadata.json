@@ -1,7 +1,7 @@
 {
   "name":    "simp-activemq",
-  "version": "2.0.0",
-  "author":  "simp",
+  "version": "3.0.0",
+  "author":  ["puppetcommunity", "simp"],
   "summary": "configures activemq to comply with SIMP security standards",
   "license": "Apache-2.0",
   "source":  "https://github.com/simp/pupmod-simp-activemq",

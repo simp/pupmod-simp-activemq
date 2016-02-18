@@ -12,10 +12,10 @@
 #
 class activemq::config (
   $server_config,
-  $manage_config,
   $instance,
   $package,
-  $path = '/etc/activemq/activemq.xml'
+  $path = '/etc/activemq/activemq.xml',
+  $server_config_show_diff = 'UNSET',
 ) {
 
   # Resource defaults
@@ -27,6 +27,15 @@ class activemq::config (
     require => Package[$package],
   }
 
+  if $server_config_show_diff != 'UNSET' {
+    if versioncmp($settings::puppetversion, '3.2.0') >= 0 {
+      File { show_diff => $server_config_show_diff }
+    } else {
+      warning('show_diff not supported in puppet prior to 3.2, ignoring')
+    }
+  }
+
+  $server_config_real = $server_config
 
   if $::osfamily == 'Debian' {
     $available = "/etc/activemq/instances-available/${instance}"
@@ -46,22 +55,14 @@ class activemq::config (
     $path_real = $path
   }
 
-  file {'/usr/share/activemq/conf/activemq-wrapper.conf' :
+  # The configuration file itself.
+  file { 'activemq.xml':
     ensure  => file,
-    content => template('activemq/default/activemq-wrapper.conf'),
-    mode    => '0755'
-  }
-
-
-  if $manage_config {
-    # The configuration file itself.
-    file { 'activemq.xml':
-      ensure  => file,
-      path    => $path_real,
-      owner   => '0',
-      group   => '0',
-      content => $server_config,
-    }
+    path    => $path_real,
+    owner   => 'activemq',
+    group   => 'activemq',
+    mode    => '0600',
+    content => $server_config_real,
   }
 
 }

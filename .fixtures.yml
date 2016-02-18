@@ -1,8 +1,5 @@
----
 fixtures:
   repositories:
-    common: "git://github.com/simp/pupmod-simp-common.git"
-    simplib: 'git://github.com/simp/pupmod-simp-simplib'
-    stdlib: "git://github.com/simp/puppetlabs-stdlib.git"
+    stdlib: "git://github.com/puppetlabs/puppetlabs-stdlib.git"
   symlinks:
     activemq: "#{source_dir}"
