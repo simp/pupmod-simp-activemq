@@ -25,12 +25,6 @@ class activemq::packages (
     notify => Service['activemq'],
   }
 
-  package { 'tanukiwrapper' :
-    ensure => installed,
-    notify => Service['activemq'],
-    before => Package[$package_real]
-  }
-
   # Has been reworked in 5.9 and no longer needed
   if $::osfamily == 'RedHat' and ($version == 'present' or versioncmp($version, '5.9') < 0) {
     # JJM Fix the activemq init script always exiting with status 0
