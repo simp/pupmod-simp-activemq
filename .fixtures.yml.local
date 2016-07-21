@@ -1,6 +1,5 @@
----
-fixtures:
-  symlinks:
-    activemq: "#{source_dir}"
-    stdlib: "#{source_dir}/../stdlib"
-    common: "#{source_dir}/../common"
+--- 
+  fixtures: 
+    symlinks: 
+      activemq: "#{source_dir}"
+      stdlib: "#{source_dir}/../stdlib"

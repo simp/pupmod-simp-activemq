@@ -1,0 +1,22 @@
+* Thu Jan 21 2016 Nick Markowski <nmarkowski@keywcorp.com> - 3.0.0-0
+- Updated module to the latest for enhanced features and deprecation
+  of the tanukiwrapper dependency.
+
+* Mon Nov 09 2015 Chris Tessmer <chris.tessmer@onypoint.com> - 2.0.0-1
+- migration to simplib and simpcat (lib/ only)
+
+* Fri Jan 16 2015 Trevor Vaughan <tvaughan@onyxpoint.com> - 2.0.0-0
+- Changed puppet-server requirement to puppet
+
+* Wed Jan 14 2015 Nick Markowski <nmarkowski@keywcorp.com> - 2.0.0-0
+- Rebased the module off of puppetlabs-activemq-0.4.0
+
+* Wed May 21 2014 Nick Markowski <nmarkowski@keywcorp.com> - 1.0.1-alpha
+- You can now pass 'instance' and 'server_config' to the simp activemq, and
+  reasonable defaults were set.
+
+* Mon Apr 14 2014 Kendall Moore <kmoore@keywcorp.com> - 1.0.1-alpha
+- Refactored simp.pp to pass lint tests for puppet 3 and hiera compatibility.
+
+* Wed Oct 23 2013 Nick Markowski <nmarkowski@keywcorp.com> - 1.0.0-alpha
+- Initial build
