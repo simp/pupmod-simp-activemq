@@ -1,29 +1,35 @@
 {
-  "name":    "simp-activemq",
+  "name": "simp-activemq",
   "version": "3.0.0",
-  "author":  ["puppetcommunity", "simp"],
+  "author": [
+    "puppetcommunity",
+    "simp"
+  ],
   "summary": "configures activemq to comply with SIMP security standards",
   "license": "Apache-2.0",
-  "source":  "https://github.com/simp/pupmod-simp-activemq",
+  "source": "https://github.com/simp/pupmod-simp-activemq",
   "project_page": "https://github.com/simp/pupmod-simp-activemq",
-  "issues_url":   "https://simp-project.atlassian.net",
-  "tags": [ "simp", "activemq" ],
+  "issues_url": "https://simp-project.atlassian.net",
+  "tags": [
+    "simp",
+    "activemq"
+  ],
   "dependencies": [
     {
       "name": "simp/iptables",
-      "version_requirement": ">= 4.1.0"
+      "version_requirement": ">= 4.1.4 < 5.0.0"
     },
     {
       "name": "puppetlabs/java",
-      "version_requirement": ">= 1.2.0"
+      "version_requirement": ">= 1.2.0 < 2.0.0"
     },
     {
       "name": "puppetlabs/java_ks",
-      "version_requirement": ">= 1.2.0"
+      "version_requirement": ">= 1.4.0 < 2.0.0"
     },
     {
       "name": "simp/simplib",
-      "version_requirement": ">= 1.0.0"
+      "version_requirement": ">= 1.3.1 < 2.0.0"
     }
   ],
   "operatingsystem_support": [
