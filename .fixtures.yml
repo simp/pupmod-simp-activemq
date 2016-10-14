@@ -1,7 +1,8 @@
+---
 fixtures:
   repositories:
     stdlib:
-      repo: "https://github.com/simp/puppetlabs-stdlib"
-      branch: "simp-master"
+      branch: 5.X
+      repo: https://github.com/simp/puppetlabs-stdlib
   symlinks:
     activemq: "#{source_dir}"
