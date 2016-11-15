@@ -1,3 +1,6 @@
+* Tue Nov 15 2016 Liz Nemsick <lnemsick.simp@gmail.com> - 3.0.2-0
+- Updated iptables dependency version
+
 * Thu Jan 21 2016 Nick Markowski <nmarkowski@keywcorp.com> - 3.0.0-0
 - Updated module to the latest for enhanced features and deprecation
   of the tanukiwrapper dependency.

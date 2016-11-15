@@ -1,6 +1,6 @@
 {
   "name": "simp-activemq",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "author": [
     "puppetcommunity",
     "simp"
@@ -17,7 +17,7 @@
   "dependencies": [
     {
       "name": "simp/iptables",
-      "version_requirement": ">= 4.1.4 < 5.0.0"
+      "version_requirement": ">= 5.0.0 < 6.0.0"
     },
     {
       "name": "puppetlabs/java",

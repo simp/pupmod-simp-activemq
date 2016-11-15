@@ -2,7 +2,7 @@ Requires: pupmod-puppetlabs-java < 2.0.0-0
 Requires: pupmod-puppetlabs-java >= 1.2.0-0
 Requires: pupmod-puppetlabs-java_ks < 2.0.0-0
 Requires: pupmod-puppetlabs-java_ks >= 1.4.0-0
-Requires: pupmod-simp-iptables < 5.0.0-0
-Requires: pupmod-simp-iptables >= 4.1.4-0
+Requires: pupmod-simp-iptables < 6.0.0-0
+Requires: pupmod-simp-iptables >= 5.0.0-0
 Requires: pupmod-simp-simplib < 3.0.0-0
 Requires: pupmod-simp-simplib >= 2.0.0-0
