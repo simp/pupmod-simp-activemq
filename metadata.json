@@ -1,6 +1,6 @@
 {
   "name": "simp-activemq",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "author": "SIMP Team",
   "summary": "configures activemq to comply with SIMP security standards",
   "license": "Apache-2.0",
